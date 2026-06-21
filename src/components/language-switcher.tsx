@@ -67,7 +67,7 @@ export function LanguageSwitcher({ locale, label, className }: LanguageSwitcherP
       <div
         className={cn(
           "absolute top-[calc(100%+0.6rem)] z-50 min-w-48 rounded-3xl border border-border bg-white p-2 shadow-[0_24px_80px_rgba(17,17,17,0.08)] transition-all duration-200 ease-out motion-reduce:transition-none",
-          "right-[-0.85rem] md:right-0 origin-top-right",
+          "right-[-1.15rem] md:right-0 origin-top-right",
           isOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0"

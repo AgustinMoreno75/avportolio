@@ -37,7 +37,7 @@ export default async function HomePage() {
               alt=""
               aria-hidden="true"
               priority
-              className="h-auto w-[340px] max-w-none opacity-[0.12] blur-[16px] sm:w-[460px] lg:ml-[-4rem] lg:w-[620px]"
+              className="h-auto w-[380px] max-w-none opacity-[0.2] blur-[10px] saturate-0 contrast-125 mix-blend-multiply sm:w-[520px] lg:ml-[-3rem] lg:w-[700px]"
             />
           </div>
 

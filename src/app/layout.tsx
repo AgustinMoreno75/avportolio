@@ -29,8 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description: content.metadata.description,
     keywords: [...content.metadata.keywords],
     icons: {
-      icon: "/icon",
-      shortcut: "/icon",
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
       apple: "/icon",
     },
     applicationName: siteConfig.name,
