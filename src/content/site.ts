@@ -141,8 +141,6 @@ type SiteContent = {
 const sharedTechnology = {
   webforge: ["Next.js", "TypeScript", "Automation", "Infrastructure"],
   novatv: ["Streaming", "Workflows", "Ops", "Integrations"],
-  nexus: ["AI", "Knowledge Systems", "Automation", "Productivity"],
-  ventures: ["Research", "Prototypes", "Strategy", "Venture Building"],
 };
 
 const siteContent: Record<Locale, SiteContent> = {
@@ -184,7 +182,7 @@ const siteContent: Record<Locale, SiteContent> = {
         "Un espacio personal para construir empresas, sistemas, tecnología y una vida con dirección a través de la ejecución.",
     },
     home: {
-      metadataTitle: "Inicio",
+      metadataTitle: "Start",
       metadataDescription:
         "Quién es Augusto Valmont, qué construye y por qué seguir su recorrido como emprendedor, ingeniero y builder.",
       kicker: "Sitio de marca personal",
@@ -201,7 +199,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsEyebrow: "Proyectos actuales",
       currentProjectsTitle: "Estos son los proyectos en los que estoy construyendo activamente hoy.",
       currentProjectsDescription:
-        "Cada uno refleja una parte distinta de cómo trabajo: software, operaciones, sistemas con IA y construcción de nuevas compañías.",
+        "Cada uno refleja una parte distinta de cómo trabajo: software, operaciones y construcción de sistemas sólidos.",
       viewDetails: "Ver detalle",
       aboutEyebrow: "Sobre Augusto",
       aboutTitle:
@@ -247,11 +245,11 @@ const siteContent: Record<Locale, SiteContent> = {
       },
     },
     projects: {
-      metadataTitle: "Proyectos",
+      metadataTitle: "Projects",
       metadataDescription:
         "Los proyectos, compañías y sistemas que Augusto Valmont está construyendo activamente.",
       eyebrow: "Proyectos",
-      title: "Una vista de los ventures, sistemas e ideas que estoy construyendo hoy.",
+      title: "Una vista de los proyectos y sistemas que estoy construyendo hoy.",
       description:
         "Cada proyecto forma parte de un recorrido más amplio alrededor de tecnología, ejecución, libertad y creación de valor de largo plazo.",
       missionLabel: "Misión",
@@ -277,30 +275,10 @@ const siteContent: Record<Locale, SiteContent> = {
             "Construir mejores sistemas operativos para distribución, producción e infraestructura audiovisual de largo plazo.",
           technology: sharedTechnology.novatv,
         },
-        {
-          title: "Nexus",
-          category: "Sistemas con IA",
-          status: "En desarrollo",
-          description:
-            "Un sistema operativo personal impulsado por IA para pensar mejor, moverse más rápido y ordenar la complejidad.",
-          mission:
-            "Convertir la IA en una ventaja práctica para decidir mejor, planificar con claridad y ejecutar con menos fricción.",
-          technology: sharedTechnology.nexus,
-        },
-        {
-          title: "Future Ventures",
-          category: "Nuevas compañías",
-          status: "Explorando",
-          description:
-            "Un espacio para futuras empresas y experimentos nacidos de sistemas sólidos, curiosidad real y ejecución disciplinada.",
-          mission:
-            "Seguir construyendo en industrias donde tecnología, operaciones y creación de valor de largo plazo se cruzan.",
-          technology: sharedTechnology.ventures,
-        },
       ],
     },
     about: {
-      metadataTitle: "Sobre mí",
+      metadataTitle: "About Me",
       metadataDescription:
         "Quién soy, qué estoy construyendo y cuál es la visión de largo plazo detrás de mi trabajo.",
       eyebrow: "Sobre mí",
@@ -429,7 +407,7 @@ const siteContent: Record<Locale, SiteContent> = {
         "A personal headquarters for building companies, systems, technology and a meaningful life through execution.",
     },
     home: {
-      metadataTitle: "Home",
+      metadataTitle: "Start",
       metadataDescription:
         "Who Augusto Valmont is, what he is building and why his journey as an entrepreneur, engineer and builder is worth following.",
       kicker: "Personal brand website",
@@ -446,7 +424,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsEyebrow: "Current Projects",
       currentProjectsTitle: "These are the projects I’m actively building right now.",
       currentProjectsDescription:
-        "Each one reflects a different part of how I work: software, operations, AI systems and future company building.",
+        "Each one reflects a different part of how I work: software, operations and building strong systems.",
       viewDetails: "View details",
       aboutEyebrow: "About Augusto",
       aboutTitle:
@@ -496,7 +474,7 @@ const siteContent: Record<Locale, SiteContent> = {
       metadataDescription:
         "The projects, companies and systems Augusto Valmont is actively building.",
       eyebrow: "Projects",
-      title: "A look at the ventures, systems and ideas I’m currently building.",
+      title: "A look at the projects and systems I’m currently building.",
       description:
         "Each project is part of a larger journey around technology, execution, freedom and long-term value creation.",
       missionLabel: "Mission",
@@ -522,30 +500,10 @@ const siteContent: Record<Locale, SiteContent> = {
             "Create better operating systems for content distribution, production and long-term media infrastructure.",
           technology: sharedTechnology.novatv,
         },
-        {
-          title: "Nexus",
-          category: "AI Systems",
-          status: "In Development",
-          description:
-            "An AI-powered personal operating system for thinking better, moving faster and organizing complexity.",
-          mission:
-            "Turn AI into a practical advantage for better decisions, clearer planning and lower-friction execution.",
-          technology: sharedTechnology.nexus,
-        },
-        {
-          title: "Future Ventures",
-          category: "Future Ventures",
-          status: "Exploring",
-          description:
-            "A place for future companies and experiments born from strong systems, real curiosity and disciplined execution.",
-          mission:
-            "Keep building across industries where technology, operations and long-term value creation intersect.",
-          technology: sharedTechnology.ventures,
-        },
       ],
     },
     about: {
-      metadataTitle: "About",
+      metadataTitle: "About Me",
       metadataDescription:
         "Who I am, what I’m building and the long-term vision behind my work.",
       eyebrow: "About",
@@ -673,7 +631,7 @@ const siteContent: Record<Locale, SiteContent> = {
         "Uno spazio personale per costruire aziende, sistemi, tecnologia e una vita significativa attraverso l’esecuzione.",
     },
     home: {
-      metadataTitle: "Home",
+      metadataTitle: "Start",
       metadataDescription:
         "Chi è Augusto Valmont, cosa sta costruendo e perché vale la pena seguire il suo percorso come imprenditore, ingegnere e builder.",
       kicker: "Sito di personal brand",
@@ -690,7 +648,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsEyebrow: "Progetti attuali",
       currentProjectsTitle: "Questi sono i progetti che sto costruendo attivamente in questo momento.",
       currentProjectsDescription:
-        "Ognuno riflette una parte diversa del mio modo di lavorare: software, operazioni, sistemi di IA e costruzione di nuove aziende.",
+        "Ognuno riflette una parte diversa del mio modo di lavorare: software, operazioni e costruzione di sistemi solidi.",
       viewDetails: "Vedi dettagli",
       aboutEyebrow: "Su Augusto",
       aboutTitle:
@@ -736,11 +694,11 @@ const siteContent: Record<Locale, SiteContent> = {
       },
     },
     projects: {
-      metadataTitle: "Progetti",
+      metadataTitle: "Projects",
       metadataDescription:
         "I progetti, le aziende e i sistemi che Augusto Valmont sta costruendo attivamente.",
       eyebrow: "Progetti",
-      title: "Uno sguardo ai venture, ai sistemi e alle idee che sto costruendo oggi.",
+      title: "Uno sguardo ai progetti e ai sistemi che sto costruendo oggi.",
       description:
         "Ogni progetto fa parte di un percorso più ampio attorno a tecnologia, esecuzione, libertà e creazione di valore nel lungo periodo.",
       missionLabel: "Missione",
@@ -766,30 +724,10 @@ const siteContent: Record<Locale, SiteContent> = {
             "Creare sistemi operativi migliori per distribuzione, produzione e infrastruttura media di lungo periodo.",
           technology: sharedTechnology.novatv,
         },
-        {
-          title: "Nexus",
-          category: "Sistemi AI",
-          status: "In sviluppo",
-          description:
-            "Un sistema operativo personale potenziato dall’IA per pensare meglio, muoversi più velocemente e organizzare la complessità.",
-          mission:
-            "Trasformare l’IA in un vantaggio pratico per decisioni migliori, pianificazione più chiara ed esecuzione con meno attrito.",
-          technology: sharedTechnology.nexus,
-        },
-        {
-          title: "Future Ventures",
-          category: "Nuove aziende",
-          status: "In esplorazione",
-          description:
-            "Uno spazio per future aziende ed esperimenti nati da sistemi forti, curiosità reale ed esecuzione disciplinata.",
-          mission:
-            "Continuare a costruire in settori dove tecnologia, operazioni e creazione di valore di lungo periodo si incontrano.",
-          technology: sharedTechnology.ventures,
-        },
       ],
     },
     about: {
-      metadataTitle: "Chi sono",
+      metadataTitle: "About Me",
       metadataDescription:
         "Chi sono, cosa sto costruendo e quale visione di lungo periodo sostiene il mio lavoro.",
       eyebrow: "Chi sono",
@@ -917,7 +855,7 @@ const siteContent: Record<Locale, SiteContent> = {
         "Un espace personnel pour construire des entreprises, des systèmes, de la technologie et une vie porteuse de sens grâce à l’exécution.",
     },
     home: {
-      metadataTitle: "Accueil",
+      metadataTitle: "Start",
       metadataDescription:
         "Qui est Augusto Valmont, ce qu’il construit et pourquoi suivre son parcours d’entrepreneur, d’ingénieur et de builder.",
       kicker: "Site de marque personnelle",
@@ -934,7 +872,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsEyebrow: "Projets actuels",
       currentProjectsTitle: "Voici les projets que je construis activement en ce moment.",
       currentProjectsDescription:
-        "Chacun reflète une facette différente de ma manière de travailler : logiciel, opérations, systèmes IA et création de nouvelles entreprises.",
+        "Chacun reflète une facette différente de ma manière de travailler : logiciel, opérations et construction de systèmes solides.",
       viewDetails: "Voir le détail",
       aboutEyebrow: "À propos d’Augusto",
       aboutTitle:
@@ -980,11 +918,11 @@ const siteContent: Record<Locale, SiteContent> = {
       },
     },
     projects: {
-      metadataTitle: "Projets",
+      metadataTitle: "Projects",
       metadataDescription:
         "Les projets, entreprises et systèmes qu’Augusto Valmont construit activement.",
       eyebrow: "Projets",
-      title: "Un aperçu des ventures, systèmes et idées que je construis actuellement.",
+      title: "Un aperçu des projets et des systèmes que je construis actuellement.",
       description:
         "Chaque projet fait partie d’un chemin plus large autour de la technologie, de l’exécution, de la liberté et de la création de valeur à long terme.",
       missionLabel: "Mission",
@@ -1010,30 +948,10 @@ const siteContent: Record<Locale, SiteContent> = {
             "Créer de meilleurs systèmes opérationnels pour la distribution, la production et l’infrastructure média de long terme.",
           technology: sharedTechnology.novatv,
         },
-        {
-          title: "Nexus",
-          category: "Systèmes IA",
-          status: "En développement",
-          description:
-            "Un système d’exploitation personnel alimenté par l’IA pour mieux penser, aller plus vite et organiser la complexité.",
-          mission:
-            "Transformer l’IA en avantage concret pour de meilleures décisions, une planification plus claire et une exécution avec moins de friction.",
-          technology: sharedTechnology.nexus,
-        },
-        {
-          title: "Future Ventures",
-          category: "Nouvelles entreprises",
-          status: "Exploration",
-          description:
-            "Un espace pour de futures entreprises et expériences nées de systèmes solides, d’une vraie curiosité et d’une exécution disciplinée.",
-          mission:
-            "Continuer à construire dans des secteurs où technologie, opérations et création de valeur à long terme se croisent.",
-          technology: sharedTechnology.ventures,
-        },
       ],
     },
     about: {
-      metadataTitle: "À propos",
+      metadataTitle: "About Me",
       metadataDescription:
         "Qui je suis, ce que je construis et la vision long terme derrière mon travail.",
       eyebrow: "À propos",

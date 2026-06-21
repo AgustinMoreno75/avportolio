@@ -24,10 +24,15 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(siteConfig.url),
     title: {
       default: siteConfig.name,
-      template: `%s | ${siteConfig.name}`,
+      template: `${siteConfig.name} - %s`,
     },
     description: content.metadata.description,
     keywords: [...content.metadata.keywords],
+    icons: {
+      icon: "/icon",
+      shortcut: "/icon",
+      apple: "/icon",
+    },
     applicationName: siteConfig.name,
     authors: [{ name: siteConfig.name }],
     creator: siteConfig.name,

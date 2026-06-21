@@ -23,11 +23,10 @@ export default async function Icon() {
           width: "100%",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ffffff",
-          border: "1px solid #e5e5e5",
+          background: "transparent",
         }}
       >
-        <img src={logoDataUrl} alt="AV" width="48" height="48" style={{ objectFit: "contain" }} />
+        <img src={logoDataUrl} alt="AV" width="64" height="64" style={{ objectFit: "contain" }} />
       </div>
     ),
     size
