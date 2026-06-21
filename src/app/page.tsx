@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
-import { getSiteContent } from "@/content/site";
+import { getSiteContent, siteConfig } from "@/content/site";
 import { brandLogo } from "@/lib/brand";
 import { getCurrentLocale } from "@/lib/i18n";
 
@@ -15,7 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const content = getSiteContent(locale);
 
   return {
-    title: content.home.metadataTitle,
+    title: {
+      absolute: siteConfig.name,
+    },
     description: content.home.metadataDescription,
   };
 }
