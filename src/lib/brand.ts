@@ -1,3 +1,3 @@
-import brandLogo from "../../assets/avlogo.jpeg";
+import brandLogo from "../../assets/avlogo2.jpeg";
 
 export { brandLogo };

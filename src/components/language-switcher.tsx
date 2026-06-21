@@ -56,11 +56,23 @@ export function LanguageSwitcher({ locale, label, className }: LanguageSwitcherP
       >
         <Globe className="size-4 text-muted-foreground" />
         <span>{localeDisplayNames[locale]}</span>
-        <ChevronDown className="size-4 text-muted-foreground" />
+        <ChevronDown
+          className={cn(
+            "size-4 text-muted-foreground transition-transform duration-200",
+            isOpen && "rotate-180"
+          )}
+        />
       </button>
 
-      {isOpen ? (
-        <div className="absolute right-0 top-[calc(100%+0.6rem)] z-50 min-w-48 rounded-3xl border border-border bg-white p-2 shadow-[0_24px_80px_rgba(17,17,17,0.08)]">
+      <div
+        className={cn(
+          "absolute top-[calc(100%+0.6rem)] z-50 min-w-48 rounded-3xl border border-border bg-white p-2 shadow-[0_24px_80px_rgba(17,17,17,0.08)] transition-all duration-200 ease-out motion-reduce:transition-none",
+          "right-[-0.85rem] md:right-0 origin-top-right",
+          isOpen
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        )}
+      >
           {supportedLocales.map((option) => {
             const active = option === locale;
 
@@ -80,8 +92,7 @@ export function LanguageSwitcher({ locale, label, className }: LanguageSwitcherP
               </button>
             );
           })}
-        </div>
-      ) : null}
+      </div>
     </div>
   );
 }

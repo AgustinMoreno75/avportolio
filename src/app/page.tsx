@@ -37,7 +37,7 @@ export default async function HomePage() {
               alt=""
               aria-hidden="true"
               priority
-              className="h-auto w-[300px] max-w-none opacity-[0.09] blur-[18px] sm:w-[420px] lg:ml-[-5rem] lg:w-[560px]"
+              className="h-auto w-[340px] max-w-none opacity-[0.12] blur-[16px] sm:w-[460px] lg:ml-[-4rem] lg:w-[620px]"
             />
           </div>
 
@@ -62,16 +62,24 @@ export default async function HomePage() {
             <p className="kicker">{content.home.currentlyBuilding}</p>
             <div className="mt-6 space-y-5">
               {projects.slice(0, 3).map((project) => (
-                <div key={project.title} className="rounded-3xl border border-border bg-secondary/50 p-4">
+                <Link
+                  key={project.title}
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group block rounded-3xl border border-border bg-secondary/50 p-4 transition-all duration-300 hover:-translate-y-1.5 hover:border-foreground/20 hover:bg-white hover:shadow-[0_22px_60px_rgba(17,17,17,0.08)]"
+                >
                   <div className="flex items-center justify-between gap-4">
-                    <h2 className="text-lg font-semibold text-foreground">{project.title}</h2>
+                    <h2 className="text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-foreground/80">
+                      {project.title}
+                    </h2>
                     <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-muted-foreground">
                       {project.status}
                     </span>
                   </div>
                   <p className="mt-2 text-sm leading-7 text-muted-foreground">{project.category}</p>
                   <p className="mt-3 text-sm leading-7 text-muted-foreground">{project.description}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </AnimatedSection>
@@ -130,8 +138,10 @@ export default async function HomePage() {
               <h3 className="mt-5 text-2xl font-semibold leading-tight text-foreground">{project.title}</h3>
               <p className="mt-4 text-base leading-7 text-muted-foreground">{project.description}</p>
               <Link
-                href="/projects"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground transition-transform duration-300 hover:translate-x-1"
               >
                 {content.home.viewDetails}
                 <ArrowRight className="size-4" />

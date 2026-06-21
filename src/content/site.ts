@@ -12,6 +12,7 @@ export const siteConfig = {
 
 type Project = {
   title: string;
+  href: string;
   category: string;
   status: string;
   description: string;
@@ -200,7 +201,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsTitle: "Estos son los proyectos en los que estoy construyendo activamente hoy",
       currentProjectsDescription:
         "Cada uno refleja una parte distinta de cómo trabajo: software, operaciones y construcción de sistemas sólidos.",
-      viewDetails: "Ver detalle",
+      viewDetails: "Visitar sitio",
       aboutEyebrow: "Sobre Augusto",
       aboutTitle:
         "Construyo negocios, herramientas y capacidades alrededor de la misma idea: foco de largo plazo, claridad y ejecución.",
@@ -257,6 +258,7 @@ const siteContent: Record<Locale, SiteContent> = {
       items: [
         {
           title: "WebForge",
+          href: "https://getwebforge.com",
           category: "Software y automatización",
           status: "Activo",
           description:
@@ -267,6 +269,7 @@ const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: "NovaTV",
+          href: "https://novatvgo.com",
           category: "Operaciones de medios",
           status: "En crecimiento",
           description:
@@ -425,7 +428,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsTitle: "These are the projects I’m actively building right now.",
       currentProjectsDescription:
         "Each one reflects a different part of how I work: software, operations and building strong systems.",
-      viewDetails: "View details",
+      viewDetails: "Visit website",
       aboutEyebrow: "About Augusto",
       aboutTitle:
         "I build businesses, tools and capabilities around the same idea: long-term focus, clarity and execution.",
@@ -482,6 +485,7 @@ const siteContent: Record<Locale, SiteContent> = {
       items: [
         {
           title: "WebForge",
+          href: "https://getwebforge.com",
           category: "Software & Automation",
           status: "Active",
           description:
@@ -492,6 +496,7 @@ const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: "NovaTV",
+          href: "https://novatvgo.com",
           category: "Media Operations",
           status: "Growing",
           description:
@@ -649,7 +654,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsTitle: "Questi sono i progetti che sto costruendo attivamente in questo momento.",
       currentProjectsDescription:
         "Ognuno riflette una parte diversa del mio modo di lavorare: software, operazioni e costruzione di sistemi solidi.",
-      viewDetails: "Vedi dettagli",
+      viewDetails: "Visita il sito",
       aboutEyebrow: "Su Augusto",
       aboutTitle:
         "Costruisco business, strumenti e capacità attorno alla stessa idea: visione di lungo periodo, chiarezza ed esecuzione.",
@@ -706,6 +711,7 @@ const siteContent: Record<Locale, SiteContent> = {
       items: [
         {
           title: "WebForge",
+          href: "https://getwebforge.com",
           category: "Software e automazione",
           status: "Attivo",
           description:
@@ -716,6 +722,7 @@ const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: "NovaTV",
+          href: "https://novatvgo.com",
           category: "Operazioni media",
           status: "In crescita",
           description:
@@ -873,7 +880,7 @@ const siteContent: Record<Locale, SiteContent> = {
       currentProjectsTitle: "Voici les projets que je construis activement en ce moment.",
       currentProjectsDescription:
         "Chacun reflète une facette différente de ma manière de travailler : logiciel, opérations et construction de systèmes solides.",
-      viewDetails: "Voir le détail",
+      viewDetails: "Visiter le site",
       aboutEyebrow: "À propos d’Augusto",
       aboutTitle:
         "Je construis des entreprises, des outils et des capacités autour d’une même idée : vision long terme, clarté et exécution.",
@@ -930,6 +937,7 @@ const siteContent: Record<Locale, SiteContent> = {
       items: [
         {
           title: "WebForge",
+          href: "https://getwebforge.com",
           category: "Logiciel et automatisation",
           status: "Actif",
           description:
@@ -940,6 +948,7 @@ const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: "NovaTV",
+          href: "https://novatvgo.com",
           category: "Opérations média",
           status: "En croissance",
           description:
