@@ -149,7 +149,7 @@ const siteContent: Record<Locale, SiteContent> = {
       description:
         "Sitio personal de Augusto Valmont, emprendedor, ingeniero y builder enfocado en empresas, sistemas y ejecución de largo plazo.",
       tagline:
-        "Emprendedor, ingeniero y builder enfocado en crear empresas, sistemas y una vida de crecimiento intencional.",
+        "Emprendedor, ingeniero y builder enfocado en crear empresas, sistemas y una vida de crecimiento intencional",
       keywords: [
         "Augusto Valmont",
         "emprendedor",
@@ -193,11 +193,11 @@ const siteContent: Record<Locale, SiteContent> = {
       secondaryCta: "Sobre mí",
       currentlyBuilding: "Construyendo ahora",
       whatIDoEyebrow: "Qué hago",
-      whatIDoTitle: "Construyo en la intersección entre empresas, sistemas y crecimiento personal.",
+      whatIDoTitle: "Construyo en la intersección entre empresas, sistemas y crecimiento personal",
       whatIDoDescription:
         "La idea es simple: crear cosas útiles, operarlas bien y seguir creciendo para sostener proyectos cada vez más ambiciosos.",
       currentProjectsEyebrow: "Proyectos actuales",
-      currentProjectsTitle: "Estos son los proyectos en los que estoy construyendo activamente hoy.",
+      currentProjectsTitle: "Estos son los proyectos en los que estoy construyendo activamente hoy",
       currentProjectsDescription:
         "Cada uno refleja una parte distinta de cómo trabajo: software, operaciones y construcción de sistemas sólidos.",
       viewDetails: "Ver detalle",
@@ -206,7 +206,7 @@ const siteContent: Record<Locale, SiteContent> = {
         "Construyo negocios, herramientas y capacidades alrededor de la misma idea: foco de largo plazo, claridad y ejecución.",
       aboutLink: "Conocé más sobre mí",
       principlesEyebrow: "Mis principios",
-      principlesTitle: "Unas pocas ideas claras ordenan cómo trabajo, decido y construyo.",
+      principlesTitle: "Unas pocas ideas claras ordenan cómo trabajo, decido y construyo",
       visionEyebrow: "Visión",
       finalCtaEyebrow: "Próximo paso",
       finalCtaTitle: "El recorrido recién empieza.",
@@ -225,9 +225,9 @@ const siteContent: Record<Locale, SiteContent> = {
             "Diseño marcos, procesos y tecnología que ayudan a escalar operaciones con claridad y consistencia.",
         },
         {
-          title: "Me construyo a mí mismo",
+          title: "Construyo Marca Personal",
           description:
-            "Trabajo en mejorar física, mental y profesionalmente para sostener metas cada vez más grandes con capacidad real.",
+            "Desarrollo una presencia, narrativa y posicionamiento claros para convertir lo que construyo en una marca personal sólida.",
         },
       ],
       aboutParagraphs: [
@@ -237,7 +237,7 @@ const siteContent: Record<Locale, SiteContent> = {
       principles: ["Disciplina", "Ejecución", "Responsabilidad", "Excelencia", "Crecimiento continuo"],
       vision: {
         title:
-          "Estoy construyendo una vida y un conjunto de proyectos alrededor de libertad, creación, tecnología, impacto y legado.",
+          "Construyendo una vida digna de ser vivida",
         body: [
           "Mi visión de largo plazo es crear empresas, sistemas y herramientas que me den más libertad para construir y al mismo tiempo generen valor real para otras personas.",
           "Quiero que la tecnología, la disciplina, la ambición y la ejecución apunten en la misma dirección. No me interesa solo crecer. Me interesa construir algo duradero y significativo.",
@@ -450,9 +450,9 @@ const siteContent: Record<Locale, SiteContent> = {
             "Designing frameworks, workflows and technology that help operations scale with clarity and consistency.",
         },
         {
-          title: "Build Myself",
+          title: "Build Personal Brand",
           description:
-            "Constantly improving physically, mentally and professionally to support bigger goals with real capability.",
+            "Developing a clear presence, narrative and positioning that turn what I build into a strong personal brand.",
         },
       ],
       aboutParagraphs: [
@@ -674,9 +674,9 @@ const siteContent: Record<Locale, SiteContent> = {
             "Progetto framework, processi e tecnologia che aiutano le operazioni a scalare con chiarezza e coerenza.",
         },
         {
-          title: "Costruisco me stesso",
+          title: "Costruisco il mio personal brand",
           description:
-            "Miglioro costantemente sul piano fisico, mentale e professionale per sostenere obiettivi sempre più grandi con capacità reale.",
+            "Sviluppo una presenza, una narrativa e un posizionamento chiari per trasformare ciò che costruisco in un personal brand solido.",
         },
       ],
       aboutParagraphs: [
@@ -898,9 +898,9 @@ const siteContent: Record<Locale, SiteContent> = {
             "Je conçois des cadres, des processus et de la technologie qui aident les opérations à scaler avec clarté et constance.",
         },
         {
-          title: "Je me construis moi-même",
+          title: "Je construis ma marque personnelle",
           description:
-            "Je progresse en continu sur le plan physique, mental et professionnel pour soutenir des objectifs plus grands avec une vraie capacité.",
+            "Je développe une présence, un récit et un positionnement clairs pour transformer ce que je construis en une marque personnelle forte.",
         },
       ],
       aboutParagraphs: [

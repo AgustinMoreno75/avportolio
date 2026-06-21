@@ -73,10 +73,12 @@ export default async function RootLayout({
 }>) {
   const locale = await getCurrentLocale();
   const content = getSiteContent(locale);
-  const socialLinks = siteConfig.socialLinks.map((link) => ({
+  const socialLinks = siteConfig.socialLinks
+    .filter((link) => link.id !== "github")
+    .map((link) => ({
     href: link.href,
     label: content.socialLabels[link.id],
-  }));
+    }));
 
   return (
     <html lang={intlLocaleMap[locale]} className={geist.variable}>

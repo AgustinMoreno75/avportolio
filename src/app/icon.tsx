@@ -10,7 +10,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Icon() {
-  const logoPath = path.join(process.cwd(), "assets", "avlogo.jpeg");
+  const logoPath = path.join(process.cwd(), "assets", "avlogo2.jpeg");
   const logoBuffer = await readFile(logoPath);
   const logoDataUrl = `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
 
