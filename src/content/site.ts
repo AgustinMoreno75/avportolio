@@ -142,6 +142,7 @@ type SiteContent = {
 const sharedTechnology = {
   webforge: ["Next.js", "TypeScript", "Automation", "Infrastructure"],
   novatv: ["Streaming", "Workflows", "Ops", "Integrations"],
+  personalBrand: ["Brand Strategy", "Content Systems", "Digital Presence", "Positioning"],
 };
 
 const siteContent: Record<Locale, SiteContent> = {
@@ -277,6 +278,17 @@ const siteContent: Record<Locale, SiteContent> = {
           mission:
             "Construir mejores sistemas operativos para distribución, producción e infraestructura audiovisual de largo plazo.",
           technology: sharedTechnology.novatv,
+        },
+        {
+          title: "Augusto Valmont",
+          href: siteConfig.url,
+          category: "Marca personal",
+          status: "Activo",
+          description:
+            "Un proyecto de marca personal para comunicar con claridad lo que construyo, cómo pienso y la dirección de largo plazo detrás de mi trabajo.",
+          mission:
+            "Desarrollar una presencia digital sólida que conecte proyectos, criterio, contenido y posicionamiento bajo una identidad coherente.",
+          technology: sharedTechnology.personalBrand,
         },
       ],
     },
@@ -505,6 +517,17 @@ const siteContent: Record<Locale, SiteContent> = {
             "Create better operating systems for content distribution, production and long-term media infrastructure.",
           technology: sharedTechnology.novatv,
         },
+        {
+          title: "Augusto Valmont",
+          href: siteConfig.url,
+          category: "Personal Brand",
+          status: "Active",
+          description:
+            "A personal brand project built to communicate clearly what I am building, how I think and the long-term direction behind my work.",
+          mission:
+            "Build a strong digital presence that connects projects, judgment, content and positioning under one coherent identity.",
+          technology: sharedTechnology.personalBrand,
+        },
       ],
     },
     about: {
@@ -731,6 +754,17 @@ const siteContent: Record<Locale, SiteContent> = {
             "Creare sistemi operativi migliori per distribuzione, produzione e infrastruttura media di lungo periodo.",
           technology: sharedTechnology.novatv,
         },
+        {
+          title: "Augusto Valmont",
+          href: siteConfig.url,
+          category: "Personal brand",
+          status: "Attivo",
+          description:
+            "Un progetto di personal brand pensato per comunicare con chiarezza ciò che costruisco, come penso e la direzione di lungo periodo del mio lavoro.",
+          mission:
+            "Sviluppare una presenza digitale forte che unisca progetti, giudizio, contenuti e posizionamento sotto un’identità coerente.",
+          technology: sharedTechnology.personalBrand,
+        },
       ],
     },
     about: {
@@ -956,6 +990,17 @@ const siteContent: Record<Locale, SiteContent> = {
           mission:
             "Créer de meilleurs systèmes opérationnels pour la distribution, la production et l’infrastructure média de long terme.",
           technology: sharedTechnology.novatv,
+        },
+        {
+          title: "Augusto Valmont",
+          href: siteConfig.url,
+          category: "Marque personnelle",
+          status: "Actif",
+          description:
+            "Un projet de marque personnelle conçu pour communiquer clairement ce que je construis, comment je pense et la direction de long terme derrière mon travail.",
+          mission:
+            "Développer une présence digitale forte qui relie projets, jugement, contenu et positionnement sous une identité cohérente.",
+          technology: sharedTechnology.personalBrand,
         },
       ],
     },
