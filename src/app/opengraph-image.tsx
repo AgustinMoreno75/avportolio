@@ -17,10 +17,10 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#ffffff",
-          color: "#000000",
+          background: "#fafafa",
+          color: "#111111",
           padding: "64px",
-          border: "1px solid #e5e5e5",
+          border: "1px solid #e5e7eb",
         }}
       >
         <div
@@ -28,27 +28,26 @@ export default function OpenGraphImage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            fontSize: 28,
-            letterSpacing: "0.4em",
-            textTransform: "uppercase",
-            color: "#666666",
+            fontSize: 26,
+            color: "#525252",
           }}
         >
           <span>AV</span>
-          <span>Filosofía personal</span>
+          <span>Personal brand website</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
             style={{
-              fontSize: 108,
-              lineHeight: 0.95,
-              letterSpacing: "-0.06em",
+              fontSize: 94,
+              lineHeight: 0.96,
+              letterSpacing: "-0.05em",
             }}
           >
-            AUGUSTO VALMONT
+            Augusto Valmont
           </div>
-          <div style={{ fontSize: 34, color: "#666666" }}>
-            Autodominio. Disciplina estratégica. Crecimiento implacable.
+          <div style={{ fontSize: 30, lineHeight: 1.3, color: "#525252", maxWidth: "920px" }}>
+            Entrepreneur, engineer and builder focused on companies, systems and
+            technology with long-term intent.
           </div>
         </div>
       </div>

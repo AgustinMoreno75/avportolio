@@ -20,10 +20,10 @@ export function LinkButton({
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm uppercase tracking-[0.2em] transition-colors",
+        "inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors",
         variant === "primary"
-          ? "border-black bg-black text-white hover:bg-zinc-800"
-          : "border-border bg-white text-black hover:bg-zinc-50",
+          ? "border-foreground bg-foreground text-background hover:bg-[#1f1f1f]"
+          : "border-border bg-white text-foreground hover:bg-secondary",
         className
       )}
     >

@@ -34,16 +34,16 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        solid ? "border-b border-border bg-white/95 backdrop-blur-md" : "bg-transparent"
+        solid ? "border-b border-border bg-background/95 backdrop-blur-md" : "bg-transparent"
       )}
     >
       <div className="page-frame">
         <div className="flex h-20 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-4">
-            <span className="flex size-11 items-center justify-center rounded-full border border-black text-sm font-medium tracking-[0.3em]">
+            <span className="flex size-11 items-center justify-center rounded-full border border-border bg-white text-sm font-semibold tracking-[0.16em] text-foreground">
               AV
             </span>
-            <span className="hidden text-sm uppercase tracking-[0.28em] text-muted-foreground sm:inline">
+            <span className="hidden text-sm font-medium text-muted-foreground sm:inline">
               Augusto Valmont
             </span>
           </Link>
@@ -57,7 +57,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-sm uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground",
+                    "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground",
                     active && "text-foreground"
                   )}
                 >
@@ -69,10 +69,10 @@ export function SiteHeader() {
 
           <div className="hidden lg:block">
             <Link
-              href="/philosophy"
-              className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm uppercase tracking-[0.22em] transition-colors hover:bg-zinc-50"
+              href="/contact"
+              className="inline-flex items-center rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-[#1f1f1f]"
             >
-              Explorar
+              Get In Touch
             </Link>
           </div>
 
@@ -93,16 +93,16 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {item.label}
                 </Link>
               ))}
               <Link
-                href="/philosophy"
-                className="mt-2 inline-flex w-fit rounded-full border border-border px-5 py-2.5 text-sm uppercase tracking-[0.22em]"
+                href="/contact"
+                className="mt-2 inline-flex w-fit rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-medium text-background"
               >
-                Explorar
+                Get In Touch
               </Link>
             </nav>
           </div>

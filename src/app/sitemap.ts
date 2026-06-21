@@ -6,7 +6,7 @@ import { getAllJournalArticles } from "@/lib/journal";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const journalArticles = await getAllJournalArticles();
 
-  const staticRoutes = ["", "/philosophy", "/journal", "/about"].map((path) => ({
+  const staticRoutes = ["", "/about", "/projects", "/contact", "/journal"].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
     changeFrequency: (path === "" ? "weekly" : "monthly") as "weekly" | "monthly",

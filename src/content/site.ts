@@ -1,192 +1,144 @@
 export const siteConfig = {
-  name: "AUGUSTO VALMONT",
+  name: "Augusto Valmont",
   url: "https://augustovalmont.com",
   description:
-    "La sede digital de Augusto Valmont: una filosofía de autodominio, disciplina estratégica, crecimiento y excelencia deliberada.",
-  tagline: "Autodominio. Disciplina estratégica. Crecimiento implacable.",
+    "Personal website of Augusto Valmont, an entrepreneur, engineer and builder focused on companies, systems and long-term execution.",
+  tagline:
+    "Entrepreneur, engineer and builder focused on creating companies, systems and a life of intentional growth.",
   keywords: [
     "Augusto Valmont",
-    "autodominio",
-    "disciplina estratégica",
-    "crecimiento personal",
-    "filosofía",
-    "excelencia",
+    "emprendedor",
+    "ingeniero",
+    "builder",
+    "founder",
+    "sistemas",
+    "software",
+    "tecnología",
+    "empresas",
   ],
   nav: [
-    { href: "/", label: "Inicio" },
-    { href: "/philosophy", label: "Filosofía" },
-    { href: "/journal", label: "Journal" },
-    { href: "/about", label: "Acerca" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
   ],
+  contactEmail: "hello@augustovalmont.com",
+  socialLinks: [
+    { label: "GitHub", href: "https://github.com/AgustinMoreno75" },
+    { label: "Email", href: "mailto:hello@augustovalmont.com" },
+  ],
+} as const;
+
+export const heroContent = {
+  title: "Augusto Valmont",
+  description:
+    "Entrepreneur, engineer and builder focused on creating companies, systems and a life of intentional growth.",
 };
 
-export const pillars = [
+export const whatIDo = [
   {
-    title: "Autodominio",
-    description: "Domina mente, cuerpo y emociones hasta que tu criterio pese más que cualquier impulso.",
+    title: "Build Companies",
+    description:
+      "Creating businesses that solve real problems and generate long-term value through clear execution.",
   },
   {
-    title: "Disciplina estratégica",
-    description: "Actúa con intención, consistencia y control. Nada importante debe depender del ánimo del día.",
+    title: "Build Systems",
+    description:
+      "Designing frameworks, workflows and technology that help operations scale with clarity and consistency.",
   },
   {
-    title: "Crecimiento implacable",
-    description: "Mejorar cada día en cada dominio relevante es una obligación, no una preferencia.",
-  },
-  {
-    title: "Excelencia con impacto",
-    description: "Los resultados deben ser concretos, útiles y sostenibles. La estética sin sustancia no alcanza.",
+    title: "Build Myself",
+    description:
+      "Constantly improving physically, mentally and professionally to support bigger goals with real capability.",
   },
 ];
 
-export const focusAreas = [
-  {
-    title: "Físico",
-    points: ["Fuerza.", "Salud.", "Rendimiento."],
-  },
-  {
-    title: "Mente",
-    points: ["Aprendizaje.", "Pensamiento.", "Sabiduría."],
-  },
-  {
-    title: "Patrimonio",
-    points: ["Negocios.", "Inversiones.", "Libertad."],
-  },
-  {
-    title: "Habilidades",
-    points: ["Ingeniería.", "Programación.", "Sistemas."],
-  },
-  {
-    title: "Legado",
-    points: ["Impacto.", "Liderazgo.", "Familia."],
-  },
-];
-
-export const homePhilosophy = {
-  statement: "La mayoría vive por defecto. Yo creo que la vida debe diseñarse.",
-  body:
-    "A través de disciplina, sistemas y acción deliberada, nos volvemos más fuertes, más sabios y más capaces con cada año que pasa. La libertad no es una emoción: es la consecuencia de una vida gobernada con claridad.",
-};
-
-export const initiatives = [
+export const projects = [
   {
     title: "WebForge",
+    category: "Software & Automation",
+    status: "Active",
     description:
-      "Ecosistema tecnológico enfocado en software, automatización e infraestructura digital para construir activos con profundidad operativa.",
+      "Plataforma enfocada en software, automatización e infraestructura digital para construir operaciones más inteligentes.",
+    mission:
+      "Crear herramientas y sistemas que reduzcan fricción, aumenten productividad y conviertan ideas en activos digitales reales.",
+    technology: ["Next.js", "TypeScript", "Automatización", "Infraestructura"],
   },
   {
     title: "NovaTV",
+    category: "Media Operations",
+    status: "Growing",
     description:
-      "Sistemas e infraestructura para streaming y televisión diseñados para escalar con criterio, estabilidad y visión de largo plazo.",
+      "Infraestructura para operaciones de televisión y streaming pensada para optimizar procesos, distribución y ejecución técnica.",
+    mission:
+      "Modernizar operaciones audiovisuales con sistemas más claros, más escalables y más confiables.",
+    technology: ["Streaming", "Workflows", "Ops", "Integraciones"],
   },
   {
     title: "Nexus",
+    category: "AI Systems",
+    status: "In Development",
     description:
-      "Sistema operativo personal impulsado por IA para pensar mejor, decidir con más velocidad y ejecutar con menos fricción.",
+      "Sistema operativo personal impulsado por IA para organizar información, pensar mejor y ejecutar con más velocidad.",
+    mission:
+      "Convertir conocimiento, ideas y procesos dispersos en un sistema personal de alto rendimiento.",
+    technology: ["AI", "Knowledge Systems", "Automation", "Productivity"],
+  },
+  {
+    title: "Future Ventures",
+    category: "Future Ventures",
+    status: "Exploring",
+    description:
+      "Espacio para nuevas empresas y productos nacidos de la intersección entre tecnología, sistemas y ejecución.",
+    mission:
+      "Encontrar problemas grandes, diseñar soluciones útiles y convertirlas en negocios con impacto y permanencia.",
+    technology: ["Research", "Prototipos", "Strategy", "Venture Building"],
   },
 ];
 
-export type PhilosophySection = {
-  kicker: string;
-  title: string;
-  body: string[];
+export const homeAbout = [
+  "I’m a builder. I’m interested in business, engineering, systems and the challenge of creating a life that can support meaningful ambition.",
+  "I’m not trying to sound philosophical or motivational. I’m trying to build real things: companies, tools, processes and skills that compound over time.",
+];
+
+export const principles = [
+  "Discipline",
+  "Execution",
+  "Ownership",
+  "Excellence",
+  "Continuous Growth",
+];
+
+export const vision = {
+  title: "I’m building a life and a set of ventures around freedom, creation, technology, impact and legacy.",
+  body: [
+    "My long-term vision is to create companies, systems and tools that give me more freedom to build while also creating real value for other people.",
+    "I want technology, discipline, ambition and execution to point in the same direction. I’m not only interested in growth. I’m interested in building something durable and meaningful.",
+  ],
 };
 
-export const philosophySections: PhilosophySection[] = [
-  {
-    kicker: "Identidad",
-    title: "El polímata soberano no persigue validación. Construye dominio.",
-    body: [
-      "Identidad significa saber quién se está formando cuando nadie mira. No se trata de proyectar una imagen, sino de consolidar una naturaleza capaz de sostener responsabilidad, presión y largo plazo.",
-      "La soberanía personal empieza cuando dejamos de vivir reaccionando a circunstancias, opiniones o impulsos. Desde ahí, cada decisión deja de ser accidental y empieza a responder a un estándar interno.",
-    ],
-  },
-  {
-    kicker: "Misión",
-    title: "La misión es convertirse en una fuerza útil, disciplinada y difícil de corromper.",
-    body: [
-      "Una vida bien dirigida produce claridad, capacidad y servicio. El objetivo no es solamente avanzar, sino hacerlo de un modo que eleve el carácter y expanda el impacto.",
-      "Todo lo que vale la pena requiere construcción paciente: cuerpo, criterio, patrimonio, relaciones, sistemas y legado. La misión es integrar esos dominios sin fragmentarse.",
-    ],
-  },
-  {
-    kicker: "Creencias",
-    title: "La comodidad prolongada debilita. La fricción elegida fortalece.",
-    body: [
-      "Las creencias que orientan esta filosofía son simples: lo difícil suele ser formativo, la repetición crea identidad y la libertad real exige estructura. Sin estructura, incluso el talento se vuelve errático.",
-      "No se idolatra el sufrimiento, pero sí la capacidad de tolerar incomodidad con serenidad. Lo contrario produce fragilidad disfrazada de conveniencia.",
-    ],
-  },
-  {
-    kicker: "Disciplina",
-    title: "La disciplina es la arquitectura invisible de toda vida respetable.",
-    body: [
-      "La motivación fluctúa. Los sistemas permanecen. La disciplina consiste en diseñar contextos, ritmos y estándares que reduzcan la dependencia del estado emocional.",
-      "Cuando la disciplina madura, deja de sentirse como restricción y empieza a parecerse a libertad. Permite elegir mejor, sostener mejor y corregir más rápido.",
-    ],
-  },
-  {
-    kicker: "Crecimiento",
-    title: "Crecer no es sumar ruido. Es aumentar profundidad, rango y precisión.",
-    body: [
-      "El crecimiento real no siempre es visible de inmediato. Muchas veces ocurre como refinamiento: pensar con más nitidez, entrenar con más intención, hablar con más peso, construir con más criterio.",
-      "Cada temporada exige una versión más completa de uno mismo. Quedarse igual también es una decisión, y casi siempre es una renuncia.",
-    ],
-  },
-  {
-    kicker: "Fortaleza",
-    title: "La fortaleza integra cuerpo entrenado, mente estable y voluntad confiable.",
-    body: [
-      "No alcanza con lucir preparado. Hay que estarlo. La fortaleza se mide por la capacidad de responder con eficacia bajo presión, fatiga y ambigüedad.",
-      "El cuerpo enseña obediencia, la mente enseña dirección y el carácter enseña permanencia. Sin esa triple alianza, el potencial no se vuelve poder utilizable.",
-    ],
-  },
-  {
-    kicker: "Excelencia",
-    title: "La excelencia es un estándar. Nunca un estado final.",
-    body: [
-      "Buscar excelencia implica rechazar lo improvisado cuando la situación exige profundidad. Es revisar, simplificar, depurar y elevar hasta que forma y sustancia se sostengan mutuamente.",
-      "No existe excelencia duradera sin humildad para corregir, paciencia para pulir y firmeza para sostener el nivel cuando nadie aplaude.",
-    ],
-  },
-  {
-    kicker: "Legado",
-    title: "El legado es lo que sigue ordenando después de nuestra ausencia.",
-    body: [
-      "Una vida con propósito deja sistemas, ideas, instituciones, familia y ejemplo. Dejar legado no es aspirar a monumentos; es formar estructuras que sigan produciendo bien.",
-      "La pregunta final no es cuánto acumulaste, sino cuánto fortaleciste a otros con lo que construiste.",
-    ],
-  },
-];
+export const aboutPage = {
+  whoIAm: [
+    "I’m an entrepreneur, engineer and systems thinker. I enjoy building from scratch, solving hard problems and turning ideas into something tangible.",
+    "I’m drawn to projects that mix technology, operations, strategy and personal growth. For me, building is not only work. It’s how I think and how I live.",
+  ],
+  myStory: [
+    "Over time I realized that what motivates me most is not having ideas, but executing them well. I care about learning fast, building with clarity and becoming capable enough to carry bigger things.",
+    "That’s why my path sits at the intersection of business, software, systems and self-development. Everything I do reinforces the same goal: becoming someone who can build more, better and for the long term.",
+  ],
+  whatIBelieve: [
+    "I believe discipline is a competitive advantage. I believe execution matters more than noise. And I believe clarity, ownership and consistency are what separate builders from people who only want the image of building.",
+  ],
+  whatImBuilding: [
+    "Right now I’m building across software, operations, automation and AI. At the same time, I’m building the skills, systems and personal foundation required to do bigger work over the next decade.",
+  ],
+  longTermVision: [
+    "Long term, I want to build companies and systems that create freedom, open opportunity and leave an impact that goes beyond a single season or a single project.",
+  ],
+};
 
-export const aboutSections = {
-  identity:
-    "Augusto Valmont representa una filosofía de vida orientada al autodominio, la disciplina estratégica y la búsqueda deliberada de excelencia en cada dominio relevante.",
-  vision:
-    "La visión es formar una vida soberana: fuerte en lo físico, rigurosa en lo mental, libre en lo económico y clara en su dirección moral.",
-  values: [
-    {
-      title: "Claridad",
-      description: "Pensar sin niebla. Decidir sin confusión. Nombrar la realidad con precisión.",
-    },
-    {
-      title: "Responsabilidad",
-      description: "Asumir el peso de construir una vida de alto estándar sin delegar la causa en el contexto.",
-    },
-    {
-      title: "Fortaleza",
-      description: "Desarrollar la capacidad de sostener presión, incomodidad y complejidad sin perder forma.",
-    },
-    {
-      title: "Elegancia",
-      description: "Buscar una forma de vivir donde la precisión, la estética y la sustancia convivan con naturalidad.",
-    },
-  ],
-  longTermMission:
-    "Construir sistemas, ideas e instituciones que ayuden a más personas a vivir con más estructura, criterio y libertad real.",
-  currentFocus: [
-    "Diseñar infraestructura digital para operar con mayor autonomía.",
-    "Profundizar en ingeniería, automatización e inteligencia artificial aplicada.",
-    "Elevar estándares físicos, mentales y operativos de manera simultánea.",
-  ],
+export const contactPage = {
+  intro:
+    "If you want to talk about software, systems, business, automation or an opportunity to build something meaningful, reach out.",
+  availability: "Currently open to strategic conversations, collaborations and new opportunities.",
 };

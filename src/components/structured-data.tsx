@@ -6,7 +6,11 @@ const personSchema = {
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
+  jobTitle: "Entrepreneur, Engineer, Founder",
   knowsAbout: siteConfig.keywords,
+  sameAs: siteConfig.socialLinks
+    .map((link) => link.href)
+    .filter((href) => href.startsWith("http")),
 };
 
 const websiteSchema = {
