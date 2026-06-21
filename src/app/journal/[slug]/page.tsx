@@ -7,7 +7,9 @@ import remarkGfm from "remark-gfm";
 import { AnimatedSection } from "@/components/animated-section";
 import { JournalCard } from "@/components/journal-card";
 import { mdxComponents } from "@/components/mdx-components";
-import { siteConfig } from "@/content/site";
+import { getSiteContent, siteConfig } from "@/content/site";
+import { getCurrentLocale } from "@/lib/i18n";
+import { intlLocaleMap } from "@/lib/locales";
 import { getAllJournalArticles, getJournalArticleBySlug } from "@/lib/journal";
 
 type PageProps = {
@@ -51,6 +53,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JournalArticlePage({ params }: PageProps) {
   const { slug } = await params;
+  const locale = await getCurrentLocale();
+  const siteContent = getSiteContent(locale);
   const article = await getJournalArticleBySlug(slug);
 
   if (!article) {
@@ -98,13 +102,13 @@ export default async function JournalArticlePage({ params }: PageProps) {
             href="/journal"
             className="text-sm uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
           >
-            Volver al journal
+            {siteContent.journal.article.backToJournal}
           </Link>
           <div className="mt-8 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.24em] text-muted-foreground">
             <span>{article.category}</span>
             <span className="h-1 w-1 rounded-full bg-border" />
             <span>
-              {new Date(article.date).toLocaleDateString("es-AR", {
+              {new Date(article.date).toLocaleDateString(intlLocaleMap[locale], {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
@@ -133,15 +137,20 @@ export default async function JournalArticlePage({ params }: PageProps) {
         <AnimatedSection className="mt-20 border-t border-border pt-14">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="kicker">Seguir leyendo</p>
+              <p className="kicker">{siteContent.journal.article.keepReading}</p>
               <h2 className="mt-4 text-[2.4rem] leading-[1.02] sm:text-[3.2rem]">
-                Más ideas para fortalecer criterio y estructura.
+                {siteContent.journal.article.relatedTitle}
               </h2>
             </div>
           </div>
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {relatedArticles.map((relatedArticle) => (
-              <JournalCard key={relatedArticle.slug} article={relatedArticle} />
+              <JournalCard
+                key={relatedArticle.slug}
+                article={relatedArticle}
+                locale={locale}
+                readLabel={siteContent.journal.browser.readEntry}
+              />
             ))}
           </div>
         </AnimatedSection>

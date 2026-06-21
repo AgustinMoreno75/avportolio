@@ -6,6 +6,7 @@ import { useDeferredValue, useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { JournalArticle } from "@/content/journal-types";
+import type { Locale } from "@/lib/locales";
 
 import { JournalCard } from "./journal-card";
 
@@ -13,20 +14,37 @@ const ARTICLES_PER_PAGE = 4;
 
 type JournalBrowserProps = {
   articles: JournalArticle[];
+  locale: Locale;
+  labels: {
+    searchAndFilter: string;
+    searchPlaceholder: string;
+    allCategoriesLabel: string;
+    entrySingular: string;
+    entryPlural: string;
+    updatingResults: string;
+    featuredEntry: string;
+    readFull: string;
+    noResults: string;
+    previous: string;
+    next: string;
+    page: string;
+    of: string;
+    readEntry: string;
+  };
 };
 
-export function JournalBrowser({ articles }: JournalBrowserProps) {
+export function JournalBrowser({ articles, locale, labels }: JournalBrowserProps) {
   const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("Todas");
+  const [activeCategory, setActiveCategory] = useState(labels.allCategoriesLabel);
   const [page, setPage] = useState(1);
   const [isPending, startTransition] = useTransition();
   const deferredQuery = useDeferredValue(query);
-  const categories = ["Todas", ...new Set(articles.map((article) => article.category))];
+  const categories = [labels.allCategoriesLabel, ...new Set(articles.map((article) => article.category))];
   const normalizedQuery = deferredQuery.trim().toLowerCase();
 
   const filteredArticles = articles.filter((article) => {
     const matchesCategory =
-      activeCategory === "Todas" || article.category === activeCategory;
+      activeCategory === labels.allCategoriesLabel || article.category === activeCategory;
     const haystack = [
       article.title,
       article.excerpt,
@@ -54,7 +72,7 @@ export function JournalBrowser({ articles }: JournalBrowserProps) {
     <div className="space-y-14">
       <div className="grid gap-6 border-y border-border py-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div className="space-y-4">
-          <p className="kicker">Buscar y filtrar</p>
+          <p className="kicker">{labels.searchAndFilter}</p>
           <Input
             type="search"
             value={query}
@@ -65,7 +83,7 @@ export function JournalBrowser({ articles }: JournalBrowserProps) {
                 setPage(1);
               });
             }}
-            placeholder="Buscar por idea, tema o concepto"
+            placeholder={labels.searchPlaceholder}
             className="h-12 rounded-full border-border px-5 text-base"
           />
         </div>
@@ -95,34 +113,34 @@ export function JournalBrowser({ articles }: JournalBrowserProps) {
 
       <div className="flex items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>
-          {filteredArticles.length} {filteredArticles.length === 1 ? "entrada" : "entradas"}
+          {filteredArticles.length} {filteredArticles.length === 1 ? labels.entrySingular : labels.entryPlural}
         </p>
-        <p>{isPending ? "Actualizando resultados..." : ""}</p>
+        <p>{isPending ? labels.updatingResults : ""}</p>
       </div>
 
       {featuredArticle ? (
         <div className="space-y-6">
           <div className="flex items-center justify-between gap-4">
-            <p className="kicker">Entrada destacada</p>
+            <p className="kicker">{labels.featuredEntry}</p>
             <Link
               href={`/journal/${featuredArticle.slug}`}
               className="text-sm uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground"
             >
-              Leer completa
+              {labels.readFull}
             </Link>
           </div>
-          <JournalCard article={featuredArticle} featured />
+          <JournalCard article={featuredArticle} featured locale={locale} readLabel={labels.readEntry} />
         </div>
       ) : (
         <div className="rounded-[2rem] border border-border p-8 text-muted-foreground">
-          No hay resultados para esa búsqueda.
+          {labels.noResults}
         </div>
       )}
 
       {paginatedArticles.length > 0 ? (
         <div className="grid gap-6 lg:grid-cols-2">
           {paginatedArticles.map((article) => (
-            <JournalCard key={article.slug} article={article} />
+            <JournalCard key={article.slug} article={article} locale={locale} readLabel={labels.readEntry} />
           ))}
         </div>
       ) : null}
@@ -136,10 +154,10 @@ export function JournalBrowser({ articles }: JournalBrowserProps) {
             onClick={() => setPage((current) => Math.max(1, current - 1))}
             disabled={currentPage === 1}
           >
-            Anterior
+            {labels.previous}
           </Button>
           <span className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
-            Página {currentPage} de {totalPages}
+            {labels.page} {currentPage} {labels.of} {totalPages}
           </span>
           <Button
             type="button"
@@ -148,7 +166,7 @@ export function JournalBrowser({ articles }: JournalBrowserProps) {
             onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
             disabled={currentPage === totalPages}
           >
-            Siguiente
+            {labels.next}
           </Button>
         </div>
       ) : null}

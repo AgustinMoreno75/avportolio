@@ -1,46 +1,63 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { AnimatedSection } from "@/components/animated-section";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
-import {
-  heroContent,
-  homeAbout,
-  principles,
-  projects,
-  vision,
-  whatIDo,
-} from "@/content/site";
+import { getSiteContent } from "@/content/site";
+import { brandLogo } from "@/lib/brand";
+import { getCurrentLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Home",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getCurrentLocale();
+  const content = getSiteContent(locale);
 
-export default function HomePage() {
+  return {
+    title: content.home.metadataTitle,
+    description: content.home.metadataDescription,
+  };
+}
+
+export default async function HomePage() {
+  const locale = await getCurrentLocale();
+  const content = getSiteContent(locale);
+  const projects = content.projects.items;
+
   return (
     <>
       <section className="page-frame pt-28 sm:pt-32 lg:pt-36">
-        <div className="grid gap-12 rounded-[2rem] border border-border bg-white px-6 py-10 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.15fr)_360px] lg:gap-14 lg:px-12 lg:py-16">
+        <div className="relative overflow-hidden rounded-[2rem] border border-border bg-white px-6 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+          <div className="pointer-events-none absolute inset-y-0 left-1/2 flex w-full -translate-x-1/2 items-center justify-center lg:left-0 lg:w-[48%] lg:translate-x-0 lg:justify-start">
+            <Image
+              src={brandLogo}
+              alt=""
+              aria-hidden="true"
+              priority
+              className="h-auto w-[300px] max-w-none opacity-[0.09] blur-[18px] sm:w-[420px] lg:ml-[-5rem] lg:w-[560px]"
+            />
+          </div>
+
+          <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_360px] lg:gap-14">
           <AnimatedSection className="max-w-4xl" y={24}>
-            <p className="kicker mb-6">Personal brand website</p>
+            <p className="kicker mb-6">{content.home.kicker}</p>
             <h1 className="max-w-4xl text-[3.4rem] leading-[0.94] sm:text-[4.8rem] lg:text-[6rem]">
-              {heroContent.title}
+              {content.home.heroTitle}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
-              {heroContent.description}
+              {content.home.heroDescription}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <LinkButton href="/projects">Explore My Work</LinkButton>
+              <LinkButton href="/projects">{content.home.primaryCta}</LinkButton>
               <LinkButton href="/about" variant="secondary">
-                About Me
+                {content.home.secondaryCta}
               </LinkButton>
             </div>
           </AnimatedSection>
 
           <AnimatedSection className="paper-panel p-6 sm:p-8" delay={0.1} y={18}>
-            <p className="kicker">Currently building</p>
+            <p className="kicker">{content.home.currentlyBuilding}</p>
             <div className="mt-6 space-y-5">
               {projects.slice(0, 3).map((project) => (
                 <div key={project.title} className="rounded-3xl border border-border bg-secondary/50 p-4">
@@ -56,19 +73,20 @@ export default function HomePage() {
               ))}
             </div>
           </AnimatedSection>
+          </div>
         </div>
       </section>
 
       <section className="page-frame section-space">
         <AnimatedSection>
           <SectionHeading
-            eyebrow="What I Do"
-            title="I build across companies, systems and personal growth."
-            description="The goal is simple: create useful things, operate them well and keep becoming more capable as the work gets bigger."
+            eyebrow={content.home.whatIDoEyebrow}
+            title={content.home.whatIDoTitle}
+            description={content.home.whatIDoDescription}
           />
         </AnimatedSection>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {whatIDo.map((item, index) => (
+          {content.home.whatIDo.map((item, index) => (
             <AnimatedSection
               key={item.title}
               className="paper-panel p-7 sm:p-8"
@@ -89,9 +107,9 @@ export default function HomePage() {
       <section className="page-frame section-space border-t border-border">
         <AnimatedSection>
           <SectionHeading
-            eyebrow="Current Projects"
-            title="These are the projects I’m actively building right now."
-            description="Each one reflects a different part of how I work: software, operations, AI systems and future company building."
+            eyebrow={content.home.currentProjectsEyebrow}
+            title={content.home.currentProjectsTitle}
+            description={content.home.currentProjectsDescription}
           />
         </AnimatedSection>
         <div className="mt-12 grid gap-6 lg:grid-cols-3 xl:grid-cols-4">
@@ -113,7 +131,7 @@ export default function HomePage() {
                 href="/projects"
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground"
               >
-                View details
+                {content.home.viewDetails}
                 <ArrowRight className="size-4" />
               </Link>
             </AnimatedSection>
@@ -124,19 +142,19 @@ export default function HomePage() {
       <section className="page-frame section-space-lg border-t border-border">
         <AnimatedSection className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <div className="max-w-3xl">
-            <p className="kicker">About Augusto</p>
+            <p className="kicker">{content.home.aboutEyebrow}</p>
             <h2 className="mt-5 text-[2.4rem] leading-[1.02] sm:text-[3.1rem] lg:text-[4rem]">
-              I build businesses, tools and capabilities around the same idea: long-term focus, clarity and execution.
+              {content.home.aboutTitle}
             </h2>
           </div>
           <div className="space-y-6">
-            {homeAbout.map((paragraph) => (
+            {content.home.aboutParagraphs.map((paragraph) => (
               <p key={paragraph} className="text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
                 {paragraph}
               </p>
             ))}
             <Link href="/about" className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
-              Learn more about me
+              {content.home.aboutLink}
               <ArrowRight className="size-4" />
             </Link>
           </div>
@@ -146,12 +164,12 @@ export default function HomePage() {
       <section className="page-frame section-space border-t border-border">
         <AnimatedSection>
           <SectionHeading
-            eyebrow="My Principles"
-            title="A few short principles shape how I work, decide and build."
+            eyebrow={content.home.principlesEyebrow}
+            title={content.home.principlesTitle}
           />
         </AnimatedSection>
         <div className="mt-12 flex flex-wrap gap-4">
-          {principles.map((principle, index) => (
+          {content.home.principles.map((principle, index) => (
             <AnimatedSection key={principle} delay={index * 0.05}>
               <div className="rounded-full border border-border bg-white px-5 py-3 text-sm font-medium text-foreground">
                 {principle}
@@ -164,12 +182,12 @@ export default function HomePage() {
       <section className="page-frame flex min-h-[78svh] items-center border-t border-border py-20">
         <AnimatedSection className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:justify-between">
           <div className="max-w-4xl">
-            <p className="kicker mb-6">Vision</p>
+            <p className="kicker mb-6">{content.home.visionEyebrow}</p>
             <h2 className="text-[2.9rem] leading-[0.98] sm:text-[4rem] lg:text-[5rem]">
-              {vision.title}
+              {content.home.vision.title}
             </h2>
             <div className="mt-8 max-w-3xl space-y-5">
-              {vision.body.map((paragraph) => (
+              {content.home.vision.body.map((paragraph) => (
                 <p key={paragraph} className="text-lg leading-8 text-muted-foreground sm:text-xl sm:leading-9">
                   {paragraph}
                 </p>
@@ -177,16 +195,15 @@ export default function HomePage() {
             </div>
           </div>
           <div className="rounded-[1.75rem] border border-border bg-white p-8 lg:max-w-sm">
-            <p className="kicker">Final CTA</p>
+            <p className="kicker">{content.home.finalCtaEyebrow}</p>
             <h3 className="mt-4 text-2xl leading-tight text-foreground">
-              The journey is just beginning.
+              {content.home.finalCtaTitle}
             </h3>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              If you want to follow the journey, collaborate or talk about building
-              something meaningful, let’s connect.
+              {content.home.finalCtaDescription}
             </p>
             <div className="mt-8">
-              <LinkButton href="/contact">Let&apos;s Connect</LinkButton>
+              <LinkButton href="/contact">{content.home.finalCtaButton}</LinkButton>
             </div>
           </div>
         </AnimatedSection>

@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 
 export const size = {
   width: 64,
@@ -7,7 +9,11 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const logoPath = path.join(process.cwd(), "assets", "avlogo.jpeg");
+  const logoBuffer = await readFile(logoPath);
+  const logoDataUrl = `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -18,13 +24,10 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#ffffff",
-          color: "#000000",
           border: "1px solid #e5e5e5",
-          fontSize: 28,
-          letterSpacing: "0.28em",
         }}
       >
-        AV
+        <img src={logoDataUrl} alt="AV" width="48" height="48" style={{ objectFit: "contain" }} />
       </div>
     ),
     size

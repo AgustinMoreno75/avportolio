@@ -1,13 +1,16 @@
 import Link from "next/link";
 
 import type { JournalArticle } from "@/content/journal-types";
+import { intlLocaleMap, type Locale } from "@/lib/locales";
 
 type JournalCardProps = {
   article: JournalArticle;
   featured?: boolean;
+  locale: Locale;
+  readLabel: string;
 };
 
-export function JournalCard({ article, featured = false }: JournalCardProps) {
+export function JournalCard({ article, featured = false, locale, readLabel }: JournalCardProps) {
   return (
     <Link
       href={`/journal/${article.slug}`}
@@ -16,7 +19,13 @@ export function JournalCard({ article, featured = false }: JournalCardProps) {
       <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.24em] text-muted-foreground">
         <span>{article.category}</span>
         <span className="h-1 w-1 rounded-full bg-border" />
-        <span>{new Date(article.date).toLocaleDateString("es-AR", { month: "long", day: "numeric", year: "numeric" })}</span>
+        <span>
+          {new Date(article.date).toLocaleDateString(intlLocaleMap[locale], {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </span>
         <span className="h-1 w-1 rounded-full bg-border" />
         <span>{article.readTime}</span>
       </div>
@@ -38,7 +47,7 @@ export function JournalCard({ article, featured = false }: JournalCardProps) {
           </span>
         ))}
       </div>
-      <div className="mt-8 text-sm uppercase tracking-[0.24em] text-foreground">Leer entrada</div>
+      <div className="mt-8 text-sm uppercase tracking-[0.24em] text-foreground">{readLabel}</div>
     </Link>
   );
 }
