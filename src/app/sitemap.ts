@@ -4,7 +4,7 @@ import { siteConfig } from "@/content/site";
 import { getAllJournalArticles } from "@/lib/journal";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const journalArticles = await getAllJournalArticles();
+  const journalArticles = await getAllJournalArticles("es");
 
   const staticRoutes = ["", "/about", "/projects", "/contact", "/journal"].map((path) => ({
     url: `${siteConfig.url}${path}`,

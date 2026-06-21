@@ -17,13 +17,14 @@ type PageProps = {
 };
 
 export async function generateStaticParams() {
-  const journalArticles = await getAllJournalArticles();
+  const journalArticles = await getAllJournalArticles("es");
   return journalArticles.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = await getJournalArticleBySlug(slug);
+  const locale = await getCurrentLocale();
+  const article = await getJournalArticleBySlug(slug, locale);
 
   if (!article) {
     return {};
@@ -55,13 +56,13 @@ export default async function JournalArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const locale = await getCurrentLocale();
   const siteContent = getSiteContent(locale);
-  const article = await getJournalArticleBySlug(slug);
+  const article = await getJournalArticleBySlug(slug, locale);
 
   if (!article) {
     notFound();
   }
 
-  const journalArticles = await getAllJournalArticles();
+  const journalArticles = await getAllJournalArticles(locale);
   const relatedArticles = journalArticles
     .filter((entry) => entry.slug !== article.slug)
     .slice(0, 3);

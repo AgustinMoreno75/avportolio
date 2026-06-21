@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function JournalPage() {
   const locale = await getCurrentLocale();
   const content = getSiteContent(locale);
-  const journalArticles = await getAllJournalArticles();
+  const journalArticles = await getAllJournalArticles(locale);
 
   return (
     <>

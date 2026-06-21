@@ -6,8 +6,10 @@ import { cache } from "react";
 import matter from "gray-matter";
 
 import type { JournalArticle } from "@/content/journal-types";
+import type { Locale } from "@/lib/locales";
 
 const journalDirectory = path.join(process.cwd(), "src/content/journal");
+const defaultJournalLocale: Locale = "es";
 
 function toJournalArticle(fileName: string, source: string): JournalArticle {
   const { data, content } = matter(source);
@@ -26,15 +28,27 @@ function toJournalArticle(fileName: string, source: string): JournalArticle {
   };
 }
 
-const readJournalArticles = cache(async () => {
-  const entries = await fs.readdir(journalDirectory, { withFileTypes: true });
+async function getLocaleDirectory(locale: Locale) {
+  const localeDirectory = path.join(journalDirectory, locale);
+
+  try {
+    await fs.access(localeDirectory);
+    return localeDirectory;
+  } catch {
+    return journalDirectory;
+  }
+}
+
+const readJournalArticles = cache(async (locale: Locale = defaultJournalLocale) => {
+  const localeDirectory = await getLocaleDirectory(locale);
+  const entries = await fs.readdir(localeDirectory, { withFileTypes: true });
   const articleFiles = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".mdx"))
     .map((entry) => entry.name);
 
   const articles = await Promise.all(
     articleFiles.map(async (fileName) => {
-      const source = await fs.readFile(path.join(journalDirectory, fileName), "utf8");
+      const source = await fs.readFile(path.join(localeDirectory, fileName), "utf8");
       return toJournalArticle(fileName, source);
     })
   );
@@ -44,11 +58,14 @@ const readJournalArticles = cache(async () => {
   );
 });
 
-export async function getAllJournalArticles() {
-  return readJournalArticles();
+export async function getAllJournalArticles(locale: Locale = defaultJournalLocale) {
+  return readJournalArticles(locale);
 }
 
-export async function getJournalArticleBySlug(slug: string) {
-  const articles = await readJournalArticles();
+export async function getJournalArticleBySlug(
+  slug: string,
+  locale: Locale = defaultJournalLocale
+) {
+  const articles = await readJournalArticles(locale);
   return articles.find((article) => article.slug === slug);
 }
